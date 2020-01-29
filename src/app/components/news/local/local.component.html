@@ -9,7 +9,9 @@
         <br>
         <p class="card-text">{{item.description}}</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
-        <p>{{item.publishedAt | date:'dd/MM/yyyy'}}</p>
+        <div class="card-footer text-muted">
+          {{item.publishedAt | date:'dd/MM/yyyy'}}
+        </div>
       </div>
     </div>
   </div>

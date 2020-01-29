@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location, LocationStrategy, PathLocationStrategy } from "@angular/common";
 import { NewsService } from '../../../services/news.service';
 
 @Component({
