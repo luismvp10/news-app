@@ -1,3 +1,16 @@
-<p>
-  local works!
-</p>
+<div class="container">
+  <div class="card-columns mt-5">
+    <div class="card" style="width: 18rem;"*ngFor="let item of news">
+      <img class="card-img-top" [src]="item.urlToImage"  alt="Card image cap" >
+      <div class="card-body">
+        <h5 class="card-title">{{item.title}}</h5>
+        <br>
+        <h6 class="card-subtitle mb-2 text-muted">{{item.author}}</h6>
+        <br>
+        <p class="card-text">{{item.description}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <p>{{item.publishedAt | date:'dd/MM/yyyy'}}</p>
+      </div>
+    </div>
+  </div>
+</div>

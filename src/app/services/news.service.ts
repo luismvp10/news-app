@@ -16,8 +16,7 @@ export class NewsService {
   });
 
   constructor(private http: HttpClient) {
-this.getCurrentNews();
-    console.log("Servicio funcionando");
+
   }
 
   getCurrentNews() {
@@ -30,9 +29,15 @@ this.getCurrentNews();
   }
 
   getLocalNews(){
-
+    return  this.http.get(this.env.URI+"top-headlines?country=us&apiKey="+ this.env.API)
+      .pipe( map(data => {
+        return data['articles'];
+      }));
   }
   getInternationalNews(){
-
+    return  this.http.get(this.env.URI+"top-headlines?country=us&apiKey="+ this.env.API)
+      .pipe( map(data => {
+        return data['articles'];
+      }));
   }
 }
