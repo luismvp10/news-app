@@ -18,7 +18,6 @@ export class CurrentComponent implements OnInit {
   getCurrentNews(){
    this.newService.getCurrentNews()
      .subscribe((data:any) =>{
-       console.log(data);
        this.news = data;
      });
 
