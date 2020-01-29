@@ -24,8 +24,6 @@ export class NewsService {
       .pipe( map(data => {
         return data['articles'];
     }));
-
-
   }
 
   getLocalNews(){

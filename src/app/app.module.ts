@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 
 //Servicios
 import { NewsService } from './services/news.service';
+import { CardItemComponent } from './components/news/card-item/card-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NewsService } from './services/news.service';
     InternationalComponent,
     NavbarComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CardItemComponent
   ],
   imports: [
     BrowserModule,
