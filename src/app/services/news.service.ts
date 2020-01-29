@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {environment} from "../../environments/environment";
-import {map} from "rxjs/operators";
+import {environment} from '../../environments/environment';
+import {map} from 'rxjs/operators';
 
 
 
@@ -20,7 +20,7 @@ export class NewsService {
   }
 
   getCurrentNews() {
-   return  this.http.get(this.env.URI+"top-headlines?country=us&apiKey="+ this.env.API)
+   return  this.http.get(this.env.URI+"top-headlines?country=mx&apiKey="+ this.env.API)
       .pipe( map(data => {
         return data['articles'];
     }));
