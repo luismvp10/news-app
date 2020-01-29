@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {environment} from "../../environments/environment";
+import {map} from "rxjs/operators";
 
 
 
@@ -15,10 +15,17 @@ export class NewsService {
     'Content-type': 'application/json',
   });
 
-  constructor(private http: HttpClient) { }
-/*https://newsapi.org/v2/top-headlines?country=us&apiKey=acb4d6e266f946b0a39577831fcc7f08 */
+  constructor(private http: HttpClient) {
+this.getCurrentNews();
+    console.log("Servicio funcionando");
+  }
+
   getCurrentNews() {
-    return this.http.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=acb4d6e266f946b0a39577831fcc7f08');
+   return  this.http.get(this.env.URI+"top-headlines?country=us&apiKey="+ this.env.API)
+      .pipe( map(data => {
+        return data['articles'];
+    }));
+
 
   }
 

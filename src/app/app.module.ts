@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { LocalComponent } from './components/news/local/local.component';
 import { CurrentComponent } from './components/news/current/current.component';
 import { InternationalComponent } from './components/news/international/international.component';
-import { NewsService } from './services/news.service';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+
+//Servicios
+import { NewsService } from './services/news.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [NewsService],
+  providers: [
+    NewsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

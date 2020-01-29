@@ -11,16 +11,16 @@ export class CurrentComponent implements OnInit {
   constructor(private newService: NewsService) { }
 
   ngOnInit() {
+    this.getCurrentNews();
 
-    this.newService.getInternationalNews();
   }
 
   getCurrentNews(){
-    this.newService.getCurrentNews
-        .subscribe((data:any)=>{
-          console.log(data);
-        });
-
+   this.newService.getCurrentNews()
+     .subscribe((data:any) =>{
+       console.log(data);
+       this.news = data;
+     });
 
   }
 }
